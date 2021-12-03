@@ -6,7 +6,7 @@ const Schema = use('Schema')
 class ExperienceSchema extends Schema {
   up () {
     this.create('experiences', (table) => {
-      table.increments('experienciaId')
+      table.increments('experienciaId').notNullable().primary()
       table.integer('candidateId').unsigned().references('candidateId').intable('candidates ')
       table.integer('skillId').unsigned().references('skillId').intable('skills')
       table.integer('nivel').notNullable()
