@@ -6,7 +6,8 @@ const Schema = use('Schema')
 class SkillSchema extends Schema {
   up () {
     this.create('skills', (table) => {
-      table.increments()
+      table.increments('skillId')
+      table.string('nombre',30).notNullable
       table.timestamps()
     })
   }
